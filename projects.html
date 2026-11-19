@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="校园失物招领课程项目复盘与列表筛选演示。">
+  <meta name="theme-color" content="#fdfbf7">
+  <title>项目作品 · 成长手记</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><i></i></span><span>成长手记</span></a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="records.html">学习记录</a>
+        <a href="projects.html" aria-current="page">项目作品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell page sub-page" id="main">
+    <section class="page-banner projects-banner" aria-labelledby="projects-heading">
+      <div>
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>课程实践</p>
+        <h1 id="projects-heading">项目作品</h1>
+        <p>一次把课堂练习做成网页并发布上线的尝试。</p>
+      </div>
+      <span class="feature-icon icon-folder" aria-hidden="true"></span>
+    </section>
+
+    <article class="project-card" aria-labelledby="project-heading">
+      <div class="project-top">
+        <h2 id="project-heading">校园失物招领</h2>
+        <a class="text-link" href="#demo">体验列表筛选 <span aria-hidden="true">↓</span></a>
+      </div>
+      <dl class="project-facts">
+        <div><dt>解决什么问题</dt><dd>把寻物和招领信息集中展示，让同学先看物品名称、地点和类型，再判断有没有自己要找的信息。</dd></div>
+        <div><dt>我的分工</dt><dd>整理展示字段，搭建页面和信息卡片，提交网页文件，并检查发布后的页面。</dd></div>
+        <div><dt>使用技术</dt><dd>原课程网页用 HTML 和 CSS 搭建，由 GitHub Pages 托管。下方演示另外用 JavaScript 实现关键词搜索和类别筛选。</dd></div>
+        <div><dt>遇到的最大困难</dt><dd>第一次发布时，页面在本地能打开，线上地址却访问不到。我先核对本地入口，再检查 Pages 的发布状态和链接，直到能从线上地址打开页面。</dd></div>
+      </dl>
+    </article>
+
+    <!-- 演示数据写在 HTML 中，JS 读取卡片并按条件显示或隐藏。 -->
+    <section class="demo-panel" id="demo" aria-labelledby="demo-heading">
+      <div class="section-heading">
+        <h2 id="demo-heading"><span class="heading-mark" aria-hidden="true"></span>失物招领列表演示</h2>
+        <p>用四条示例信息体验搜索和筛选，试着输入“水杯”或“图书馆”。</p>
+      </div>
+      <noscript><p class="demo-note">启用 JavaScript 即可使用搜索和筛选。</p></noscript>
+      <div class="demo-controls" id="demo-controls" hidden>
+        <div class="search-field">
+          <label for="item-search">搜索物品或地点</label>
+          <input id="item-search" type="search" placeholder="例如：图书馆" maxlength="60" autocomplete="off">
+        </div>
+        <fieldset class="filter-field">
+          <legend>信息类型</legend>
+          <div class="filter-options">
+            <label><input type="radio" name="item-type" value="all" checked><span>全部</span></label>
+            <label><input type="radio" name="item-type" value="lost"><span>寻物</span></label>
+            <label><input type="radio" name="item-type" value="found"><span>招领</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="results-count" id="results-count" role="status" hidden></p>
+      <ul class="demo-results" id="demo-results">
+        <li data-type="lost"><span class="topic-tag tag-lost">寻物</span><h3>浅蓝色水杯</h3><p>教学楼自习室 · 瓶盖有白色提环</p></li>
+        <li data-type="found"><span class="topic-tag">招领</span><h3>黑色折叠伞</h3><p>图书馆一楼 · 伞套有反光条</p></li>
+        <li data-type="lost"><span class="topic-tag tag-lost">寻物</span><h3>C 语言笔记本</h3><p>教学楼机房 · 绿色横线封面</p></li>
+        <li data-type="found"><span class="topic-tag">招领</span><h3>白色耳机盒</h3><p>图书馆自习区 · 外壳贴着星星贴纸</p></li>
+      </ul>
+      <div class="empty-state" id="empty-state" hidden>
+        <p>暂时没有匹配的信息，可以换个关键词或清除筛选。</p>
+        <button class="reset-button" type="button" id="reset-search">清除筛选</button>
+      </div>
+    </section>
+    <div class="page-end"><a class="text-link" href="records.html#main"><span aria-hidden="true">←</span> 返回学习记录</a></div>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><a href="index.html">成长手记</a><a href="index.html#contact">联系方式</a></div></footer>
+</body>
+</html>
